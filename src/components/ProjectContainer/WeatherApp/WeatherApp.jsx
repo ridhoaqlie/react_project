@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import './WeatherApp.css'
 
-import search_icon from "../assets/search.png"
-import cloud_icon from "../assets/cloud.png"
-import humidity_icon from "../assets/humidity.png"
-import wind_icon from "../assets/wind.png"
-import clear_icon from "../assets/clear.png"
-import drizzle_icon from "../assets/drizzle.png"
-import rain_icon from "../assets/rain.png"
-import snow_icon from "../assets/snow.png"
+import { Search } from '@mui/icons-material'
+import cloud_icon from "../../../assets/cloud.png"
+import humidity_icon from "../../../assets/humidity.png"
+import wind_icon from "../../../assets/wind.png"
+import clear_icon from "../../../assets/clear.png"
+import drizzle_icon from "../../../assets/drizzle.png"
+import rain_icon from "../../../assets/rain.png"
 
 const WeatherApp = () => {
 
@@ -55,15 +54,15 @@ const WeatherApp = () => {
             <div className='top-bar'>
                 <input type='text' className='cityInput' placeholder='Search' />
                 <div className="search-icon" onClick={search}>
-                    <img src={search_icon} alt='' />
+                    <Search />
                 </div>
             </div>
             <div className="weather-image">
                 <img src={cloud_icon} alt='' />
             </div>
-            <div className="weather-temp">24°C</div>
-            <div className="weather-location">London</div>
-            <div className="data-container">
+            <h1 className="weather-temp">24°C</h1>
+            <h2 className="weather-location">London</h2>
+            <div className="data-weather">
                 <div className="element">
                     <img src={humidity_icon} alt="" className="icon" />
                     <div className="data">

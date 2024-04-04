@@ -1,13 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useContext } from 'react'
+import { ThemeContext } from './contexts/theme'
+import Header from './components/Header/Header'
+import About from './components/About/About'
+import Projects from './components/Projects/Projects'
+import Skills from './components/Skills/Skills'
+import Contact from './components/Contact/Contact'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import Footer from './components/Footer/Footer'
 import './App.css'
-import WeatherApp from './components/WeatherApp'
 
 function App() {
-
+  const themeName = useContext(ThemeContext)
   return (
-    <WeatherApp />
+    <div id='top' className={'dark app'}>
+      <Header />
+
+      <main>
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+
+      <ScrollToTop />
+      <Footer />
+    </div>
   )
 }
 
