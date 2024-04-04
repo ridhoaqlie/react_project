@@ -13,23 +13,30 @@ const WeatherApp = () => {
 
     let api_key = "c10367f4acf4faa8108779ce719c22d0"
 
-    const [wIcon, setWIcon] = useState(cloud_icon);
+    const [wIcon, setWIcon] = useState(cloud_icon)
+    const [isLoading, setIsLoading] = useState(false);
+
+    const humidity = document.getElementsByClassName("humidity-percent")
+    const wind = document.getElementsByClassName("wind-rate")
+    const temprature = document.getElementsByClassName("weather-temp")
+    const location = document.getElementsByClassName("weather-location")
+    const element = document.getElementsByClassName("cityInput")
+
+    let drizzWeather = ["03d", "03n", "04d", "04n"];
+    let rainWeather = ["09d", "09n", "10d", "10n"];
 
     const search = async () => {
-        const element = document.getElementsByClassName("cityInput")
+
         if (element[0].value === "") {
             return 0;
         }
+        setIsLoading(true);
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=metric&appid=${api_key}`
         let response = await fetch(url);
         let data = await response.json();
-        const humidity = document.getElementsByClassName("humidity-percent")
-        const wind = document.getElementsByClassName("wind-rate")
-        const temprature = document.getElementsByClassName("weather-temp")
-        const location = document.getElementsByClassName("weather-location")
 
-        let drizzWeather = ["03d", "03n", "04d", "04n"];
-        let rainWeather = ["09d", "09n", "10d", "10n"];
+        setIsLoading(false)
+
 
         humidity[0].innerHTML = data.main.humidity + "%";
         wind[0].innerHTML = data.wind.speed + "km/h";
@@ -57,6 +64,7 @@ const WeatherApp = () => {
                     <Search />
                 </div>
             </div>
+            {isLoading ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div> : null}
             <div className="weather-image">
                 <img src={cloud_icon} alt='' />
             </div>
