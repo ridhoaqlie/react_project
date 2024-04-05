@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
 
   return (
     <div id='top' data-theme={isDark ? 'dark' : 'light'} className={'app'}>
