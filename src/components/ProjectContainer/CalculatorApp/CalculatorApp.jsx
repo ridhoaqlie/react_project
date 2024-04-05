@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import './CalculatorApp.css'
-import { History, Undo, X } from '@mui/icons-material'
+import { History, Undo } from '@mui/icons-material'
 
 const CalculatorApp = ({ project }) => {
     const [prevAnswer, setPrevAnswer] = useState('');
@@ -168,7 +168,7 @@ const CalculatorApp = ({ project }) => {
 
                     <div className='ctc c-compute'>
                         <button className='c-reverse' value='rv' onClick={handleDelete}>
-                            <i className='fa-solid fa-rotate-left'></i>
+                            <Undo />
                         </button>
                         <span>
                             {operand ? operand : '0'}

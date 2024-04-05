@@ -32,7 +32,7 @@
 .c-type button {
     padding: 0.5rem;
     background-color: var(--black--first);
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 400;
     transition: all 0.5s linear;
 }
@@ -140,6 +140,7 @@
 }
 
 .c-grid>button.special {
+    font-weight: 700;
     background-color: #0060e5;
 }
 

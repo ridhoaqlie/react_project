@@ -77,12 +77,12 @@ const WeatherApp = ({ project }) => {
             <p className='project__description'>{project.description}</p>
             <div className='weather-container'>
                 <div className='top-bar'>
-                    <input type='text' className='cityInput' placeholder='Search' />
+                    <input type='text' className='cityInput' placeholder='Input City' />
                     <div className='search-icon' onClick={search}>
                         <Search />
                     </div>
                 </div>
-                {isError ? <div className='response-error'>Data tidak ditemukan :&#40;</div> : null}
+                {isError ? <div className='response-error'>Data not found :&#40;</div> : null}
                 {isLoading ? <div className='lds-ellipsis'><div></div><div></div><div></div><div></div></div> : null}
                 <div className='weather-image'>
                     <img src={cloud_icon} alt='' />

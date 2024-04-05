@@ -33,7 +33,7 @@ const projects = [
     {
         name: 'Project 3',
         description:
-            'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam'
+            'Not implement yet'
     },
 ]
 
