@@ -96,8 +96,8 @@ const WeatherApp = ({ project }) => {
                 </div>
                 <h1 className='weather-temp'>35°C</h1>
                 <div className='reaction-temp'>
-                    <h4 className='represent-temp'>Hot 😫</h4>
-                    <h5>in</h5>
+                    <h4 className='represent-temp' style={{ color: '#cdcdff' }}>Hot 😫</h4>
+                    <h5 style={{ color: '#cdcdff' }}>in</h5>
                 </div>
                 <div className='weather-location'>
                     <span className='city'>Jakarta, </span>
