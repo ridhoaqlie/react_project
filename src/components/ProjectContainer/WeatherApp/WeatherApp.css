@@ -1,5 +1,4 @@
-.container {
-    margin-top: 1em;
+.weather-container {
     width: 100%;
     height: auto;
     border-radius: 0.5em;
@@ -73,6 +72,14 @@
     color: white;
     display: flex;
     justify-content: center;
+}
+
+.response-error {
+    margin-top: 1em;
+    text-align: center;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 400;
 }
 
 .element {

@@ -1,0 +1,153 @@
+:root {
+    --black--first: #363e4d;
+    --black--second: #242933;
+    --main-black: #161a20;
+}
+
+.calc-container {
+    background-color: #161a20;
+    width: 100%;
+    border-radius: 0.5em;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* calculator wrapper */
+.c-wrapper {
+    display: grid;
+    grid-auto-rows: 10% 28% 11% 51%;
+    min-height: 400px;
+}
+
+.ctc {
+    padding: 0.5rem 1rem;
+}
+
+.c-type {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+}
+
+.c-type button {
+    padding: 0.5rem;
+    background-color: var(--black--first);
+    font-size: 0.8em;
+    font-weight: 400;
+    transition: all 0.5s linear;
+}
+
+.c-type button.active {
+    background-color: #0060e5;
+}
+
+.c-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    transition: all 0.5s linear;
+}
+
+.c-history-answer {
+    display: flex;
+    background-color: var(--black--first);
+    border-radius: 0.5rem;
+    color: #cbe1ff;
+    font-weight: 300;
+    font-size: 0.9em;
+    padding: 0.1em 0.5em;
+}
+
+.c-history-answer span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.c-answer {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: 900;
+}
+
+.c-compute {
+    background-color: var(--black--first);
+    padding: 0.4rem 1rem;
+    display: grid;
+    grid-template-columns: minmax(0px, 50px) repeat(2, 1fr);
+
+    font-size: 1.8rem;
+    font-weight: 300;
+    transition: all 0.5s linear;
+    overflow: hidden;
+}
+
+.c-compute span {
+    letter-spacing: 0.1rem;
+    color: var(--default-text-color);
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-y: scroll;
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.c-compute>button {
+    background-color: unset;
+    font-size: 1.2rem;
+    color: var(--default-text-color);
+}
+
+.c-compute span::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Action buttons */
+.c-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.5rem 1rem;
+}
+
+.c-grid>button {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.5s linear;
+    text-transform: uppercase;
+    background-color: var(--black--second);
+    border: 3px solid var(--main-black);
+}
+
+.c-grid>button:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.c-grid>button.top-btn {
+    background-color: var(--black--first);
+}
+
+.c-grid>button.normal {
+    background-color: var(--black--second);
+}
+
+.c-grid>button.special {
+    background-color: #0060e5;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+
+.no-rv {
+    cursor: unset;
+}
