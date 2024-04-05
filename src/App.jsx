@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-import { ThemeContext } from './contexts/theme'
 import Header from './components/Header/Header'
 import About from './components/About/About'
 import Projects from './components/Projects/Projects'
@@ -8,12 +6,17 @@ import Contact from './components/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Footer from './components/Footer/Footer'
 import './App.css'
+import { useState } from 'react'
 
 function App() {
-  const themeName = useContext(ThemeContext)
+
+  const [isDark, setIsDark] = useState(false)
+
   return (
-    <div id='top' className={'dark app'}>
-      <Header />
+    <div id='top' data-theme={isDark ? 'dark' : 'light'} className={'app'}>
+      <Header
+        isChecked={isDark}
+        handleChange={() => setIsDark(!isDark)} />
 
       <main>
         <About />

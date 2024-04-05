@@ -2,7 +2,7 @@ import { header } from '../../portfolio'
 import './Header.css'
 import Navbar from '../Navbar/Navbar.jsx'
 
-const Header = () => {
+const Header = ({ handleChange, isChecked }) => {
     const { homepage, title } = header
 
     return (
@@ -16,7 +16,9 @@ const Header = () => {
                     title
                 )}
             </h3>
-            <Navbar />
+            <Navbar
+                handleChange={handleChange}
+                isChecked={isChecked} />
         </header>
     )
 }

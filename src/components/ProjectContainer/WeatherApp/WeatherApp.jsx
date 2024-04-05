@@ -12,7 +12,6 @@ import rain_icon from '../../../assets/rain.png'
 
 const WeatherApp = ({ project }) => {
 
-    console.log(project.name)
 
     const [wIcon, setWIcon] = useState(cloud_icon)
     const [isLoading, setIsLoading] = useState(false);

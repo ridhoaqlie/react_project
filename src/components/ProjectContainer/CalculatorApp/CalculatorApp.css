@@ -1,15 +1,10 @@
-:root {
-    --black--first: #363e4d;
-    --black--second: #242933;
-    --main-black: #161a20;
-}
-
 .calc-container {
     background-color: #161a20;
     width: 100%;
     border-radius: 0.5em;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    color: white;
 }
 
 /* calculator wrapper */
