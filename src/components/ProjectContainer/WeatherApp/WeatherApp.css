@@ -175,3 +175,10 @@
         transform: translate(24px, 0);
     }
 }
+
+.reaction-temp {
+    border-radius: 0.5em;
+    border: 2px solid #192055;
+    /* background-color: rgba(25, 32, 85, 0.2); */
+    padding: 0.4em 0;
+}

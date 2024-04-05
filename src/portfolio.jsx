@@ -9,8 +9,8 @@ const about = {
     name: 'Ridho Aqli Efendi',
     role: 'Software Engineer',
     description:
-        'Here you can see some of project that I use with reactJS',
-    resume: 'https://github.com/ridhoaqlie/react_project',
+        'Here you can see some of project created with reactJS, it will have a variety of functionality in each project.',
+    sourceCode: 'https://github.com/ridhoaqlie/react_project',
     social: {
         linkedin: 'https://linkedin.com/in/ridhoaqlie',
         github: 'https://github.com/ridhoaqlie',
@@ -23,12 +23,12 @@ const projects = [
     {
         name: 'Weather Project',
         description:
-            'This is an app to find a weather in all city on earth, configure with Open Weather API'
+            'An app to find a weather in all city on earth, configured with Open Weather API'
     },
     {
         name: 'Calculator Project',
         description:
-            'Just a regular calc app, but lets give a try'
+            'Just a regular calculator app, but kinda less complete. Lets find out by yourself'
     },
     {
         name: 'Project 3',

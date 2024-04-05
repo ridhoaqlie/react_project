@@ -9,6 +9,7 @@ import wind_icon from '../../../assets/wind.png'
 import clear_icon from '../../../assets/clear.png'
 import drizzle_icon from '../../../assets/drizzle.png'
 import rain_icon from '../../../assets/rain.png'
+import snow_icon from '../../../assets/snow.png'
 
 const WeatherApp = ({ project }) => {
 
@@ -23,11 +24,13 @@ const WeatherApp = ({ project }) => {
     const city = document.getElementsByClassName('city')
     const country = document.getElementsByClassName('country')
     const element = document.getElementsByClassName('cityInput')
+    const represent = document.getElementsByClassName('represent-temp')
 
     let drizzWeather = ['03d', '03n', '04d', '04n'];
     let rainWeather = ['09d', '09n', '10d', '10n'];
 
     const search = async () => {
+        setIsError(false)
         if (element[0].value === '') {
             return 0;
         }
@@ -36,37 +39,42 @@ const WeatherApp = ({ project }) => {
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=metric&appid=${api_key}`
 
             setIsLoading(true);
-            setIsError(false)
             let response = await fetch(url);
             let data = await response.json();
 
             if (data) {
                 humidity[0].innerHTML = data.main.humidity + '%';
                 wind[0].innerHTML = data.wind.speed + 'km/h';
-                temprature[0].innerHTML = data.main.temp + '°C';
+                let temp = data.main.temp;
+                temprature[0].innerHTML = temp + '°C';
                 city[0].innerHTML = data.name + ', ';
                 const countryFullName = countriesCode[data.sys.country.toUpperCase()]
                 country[0].innerHTML = countryFullName;
 
-                if (data.weather[0].icon === '01d' || data.weather[0].icon === '01n') {
-                    setWIcon(clear_icon)
-                } else if (data.weather[0].icon === '02d' || data.weather[0].icon === '02n') {
-                    setWIcon(cloud_icon)
-                } else if (drizzWeather.includes(data.weather[0].icon)) {
-                    setWIcon(drizzle_icon)
-                } else if (rainWeather.includes(data.weather[0].icon)) {
-                    setWIcon(rain_icon)
-                } else {
-                    setWIcon(clear_icon)
-                }
+                let weatherIcon = data.weather[0].icon;
+
+                if (weatherIcon === '01d' || weatherIcon === '01n') setWIcon(clear_icon)
+                else if (weatherIcon === '02d' || weatherIcon === '02n') setWIcon(cloud_icon)
+                else if (drizzWeather.includes(weatherIcon)) setWIcon(drizzle_icon)
+                else if (rainWeather.includes(weatherIcon)) setWIcon(rain_icon)
+                else if (weatherIcon === '13d' || weatherIcon === '13n') setWIcon(snow_icon)
+                else setWIcon(clear_icon)
+
+                if (temp < 0) represent[0].innerHTML = 'OMG, this is very 🥶';
+                else if (temp <= 10) represent[0].innerHTML = 'Cold 😶‍🌫️';
+                else if (temp <= 22) represent[0].innerHTML = 'Kinda Cool 😥';
+                else if (temp <= 32) represent[0].innerHTML = 'So Warm 🥰';
+                else if (temp <= 40) represent[0].innerHTML = 'Hot 😫';
+                else represent[0].innerHTML = 'No Way 🥵';
+
                 setIsLoading(false)
             }
 
         } catch (err) {
+            console.log(err)
             setIsError(true)
             setIsLoading(false)
         }
-
 
     }
 
@@ -84,9 +92,13 @@ const WeatherApp = ({ project }) => {
                 {isError ? <div className='response-error'>Data not found :&#40;</div> : null}
                 {isLoading ? <div className='lds-ellipsis'><div></div><div></div><div></div><div></div></div> : null}
                 <div className='weather-image'>
-                    <img src={cloud_icon} alt='' />
+                    <img src={wIcon} alt='' />
                 </div>
-                <h1 className='weather-temp'>32°C</h1>
+                <h1 className='weather-temp'>35°C</h1>
+                <div className='reaction-temp'>
+                    <h4 className='represent-temp'>Hot 😫</h4>
+                    <h5>in</h5>
+                </div>
                 <div className='weather-location'>
                     <span className='city'>Jakarta, </span>
                     <span className='country'>Indonesia</span>

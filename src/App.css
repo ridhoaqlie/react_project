@@ -1,4 +1,6 @@
 :root {
+  --project-gradient: rgba(35, 40, 62, 0.25);
+  --project-gradient-alt: rgba(42, 47, 76, 0.3);
   --black--first: #363e4d;
   --black--second: #242933;
   --main-black: #161a20;
@@ -146,6 +148,8 @@ main {
 }
 
 [data-theme='dark'] {
+  --project-gradient: rgba(255, 255, 255, 0.25);
+  --project-gradient-alt: rgba(226, 226, 226, 0.3);
   --clr-bg: #23283e;
   --clr-bg-alt: #2a2f4c;
   --clr-fg: #bdbddd;
