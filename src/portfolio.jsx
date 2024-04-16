@@ -23,7 +23,7 @@ const projects = [
     {
         name: 'Weather Project',
         description:
-            'An app to find a weather in all city on earth, configured with Open Weather API'
+            'An app to find a weather in all city on earth currently, configured with Open Weather API'
     },
     {
         name: 'Calculator Project',
@@ -31,7 +31,12 @@ const projects = [
             'Just a regular calculator app, but kinda less complete. Lets find out by yourself'
     },
     {
-        name: 'Project 3',
+        name: 'ListApp Project',
+        description:
+            'This is a List app used local storage, Try refresh the page after filled in'
+    },
+    {
+        name: 'Project 4',
         description:
             'Not implement yet'
     },
