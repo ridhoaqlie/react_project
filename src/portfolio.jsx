@@ -21,22 +21,27 @@ const projects = [
     // projects can be added an removed
     // if there are no projects, Projects section won't show up
     {
-        name: 'Weather Project',
+        name: 'Weather App',
         description:
             'An app to find a weather in all city on earth currently, configured with Open Weather API'
     },
     {
-        name: 'Calculator Project',
+        name: 'Calculator App',
         description:
             'Just a regular calculator app, but kinda less complete. Lets find out by yourself'
     },
     {
-        name: 'ListApp Project',
+        name: 'List App',
         description:
             'This is a List app used local storage, Try refresh the page after filled in'
     },
     {
-        name: 'Project 4',
+        name: 'TicTacToe Game',
+        description:
+            'Lets play with your friend'
+    },
+    {
+        name: 'Project 5',
         description:
             'Not implement yet'
     },

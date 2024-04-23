@@ -1,0 +1,57 @@
+.gameBoard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.instructionsStyle {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.buttonStyle {
+    margin-top: 15px;
+    margin-bottom: 16px;
+    width: 80px;
+    height: 40px;
+    background-color: #8acaca;
+    color: white;
+    font-size: 16px;
+}
+
+
+.boardStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    width: 208px;
+    border: 3px #eee solid;
+}
+
+.rowStyle {
+    display: flex;
+}
+
+.squareStyle {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    margin: 4px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.board-row .winnerShow {
+    position: absolute;
+    transform: translate(7%, 24%);
+    color: blue;
+    font-size: 20px;
+    padding: 0.5em 1em;
+}

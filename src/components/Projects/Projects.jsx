@@ -4,6 +4,7 @@ import WeatherApp from '../ProjectContainer/WeatherApp/WeatherApp';
 import CalculatorApp from '../ProjectContainer/CalculatorApp/CalculatorApp';
 import ProjectContainer from '../ProjectContainer/ProjectContainer';
 import ListApp from '../ProjectContainer/ListApp/ListApp';
+import TicTacToe from '../ProjectContainer/TicTacToe/TicTacToe';
 
 const Projects = () => {
     return (
@@ -14,7 +15,8 @@ const Projects = () => {
                 <WeatherApp project={projects[0]} />
                 <CalculatorApp project={projects[1]} />
                 <ListApp project={projects[2]} />
-                <ProjectContainer project={projects[3]} />
+                <TicTacToe project={projects[3]} />
+                <ProjectContainer project={projects[4]} />
             </div>
         </section>
     )
